@@ -40,15 +40,15 @@ public class GoldModel extends GameModel {
 			return this.yDelta;
 		}
 	}
-	
-	
+
+
 
 	private static final int COIN_START_AMOUNT = 20;
 
 	/*
 	 * The following GameTile objects are used only
 	 * to describe how to paint the specified item.
-	 * 
+	 *
 	 * This means that they should only be used in
 	 * conjunction with the get/setGameboardState()
 	 * methods.
@@ -57,10 +57,10 @@ public class GoldModel extends GameModel {
 	/** Graphical representation of a coin. */
 	private static final GameTile COIN_TILE = new RoundTile(new Color(255, 215,
 			0),
-			new Color(255, 255, 0), 2.0);
+			new Color(0, 0, 255), 2.0);
 
-	
-			
+
+
 	/** Graphical representation of the collector */
 	private static final GameTile COLLECTOR_TILE = new RoundTile(Color.BLACK,
 			Color.RED, 2.0);
@@ -130,7 +130,7 @@ public class GoldModel extends GameModel {
 
 	/**
 	 * Return whether the specified position is empty.
-	 * 
+	 *
 	 * @param pos
 	 *            The position to test.
 	 * @return true if position is empty.
@@ -156,7 +156,7 @@ public class GoldModel extends GameModel {
 				break;
 			case KeyEvent.VK_DOWN:
 				this.direction = Directions.SOUTH;
-				
+
 				break;
 			default:
 				// Don't change direction if another key is pressed
@@ -176,7 +176,7 @@ public class GoldModel extends GameModel {
 	/**
 	 * This method is called repeatedly so that the
 	 * game can update its state.
-	 * 
+	 *
 	 * @param lastKey
 	 *            The most recent keystroke.
 	 */
@@ -216,7 +216,7 @@ public class GoldModel extends GameModel {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param pos The position to test.
 	 * @return <code>false</code> if the position is outside the playing field, <code>true</code> otherwise.
 	 */
@@ -224,7 +224,7 @@ public class GoldModel extends GameModel {
 		return pos.getX() < 0 || pos.getX() >= getGameboardSize().width
 				|| pos.getY() < 0 || pos.getY() >= getGameboardSize().height;
 	}
-	
+
 	public int getScore(){
 		return this.score;
 	}
